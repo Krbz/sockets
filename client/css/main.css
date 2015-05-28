@@ -1,0 +1,78 @@
+.displayNone {
+	display: none;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #ccc;
+}
+#draw {
+    background: #fff;
+    border: 1px solid #eee;
+    height: 80vh;
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+}
+
+@keyframes pinAnimation {
+	0% {
+		border: 3px solid #fff;
+		background: #b00b00;
+	}
+	25% {
+		border: 3px solid #eaa292;
+	}
+	50% {
+		border: 3px solid #D64525;
+		background: #eaa292;
+	}
+	75% {
+		border: 3px solid #eaa292; 
+	}
+}
+.circ {
+	position: absolute;
+	background: #b00b00;
+	width: 30px;
+	height: 22px;
+	border-radius: 50px;
+	color: #fff;
+	padding-top: 8px;
+	font-size: 0.8em;
+	cursor: pointer;
+	border: 3px solid #fff;
+}
+.circ:hover {
+	animation: 3s pinAnimation infinite;
+	/*transition: background 1s infinite;*/
+	/*background: #fda;*/
+	/*animation: 2s backgroundChange infinite;*/
+}
+
+.commentArea {
+	border: 1px solid #333;
+	background: #fff;
+	margin-top: -5px;
+	margin-left: 25px;
+	width: 200px;
+	text-align: left;
+	border-radius: 5px 5px 5px 5px;
+	cursor: default;
+}
+.commentArea .comment-list {
+	width: 90%;
+	min-height: 0;
+	color: #000;
+	padding: 5px 10px;
+	cursor: auto;
+}
+.commentArea .comment-list p.comment-text {
+	font-size: 1.1em;
+}
+
+.activePin {
+	z-index: 999;
+}
