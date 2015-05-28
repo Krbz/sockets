@@ -1,0 +1,14 @@
+{
+  "name": "justSockets",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "repository": "",
+  "author": "",
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "mongodb": "latest",
+    "socket.io": "latest"
+  }
+}
