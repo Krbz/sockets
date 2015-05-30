@@ -1,18 +1,41 @@
 var modules = {
-    variables: function(){
-        var draw = document.getElementById('draw');
+    variables: function() {
+        var draw = document.getElementById('draw'),
+        addNewPinBtn = document.getElementById('addNewPinBtn'),
+        togglePinsBtn = document.getElementById('togglePinsBtn'),
+        copyUrlBtn = document.getElementById('copyUrlBtn');
+        console.log(modules.uuid());
     },
     init: function() {
-        modules.variables;
-        draw.addEventListener('click', modules.pin.init);
+        modules.variables();
+        
+        //fake background - tempaltka
+        draw.style.backgroundImage = 'url('+template.pics()[Math.floor(Math.random()*template.pics().length)]+')';
+
+        togglePinsBtn.addEventListener('click', function(){
+            togglePinsBtn.classList.toggle('success');
+            togglePinsBtn.classList.contains('success') ? modules.pin.showAllPins() : modules.pin.closeAllPins();
+        });
+        
+        addNewPinBtn.addEventListener('click', function() {
+            addNewPinBtn.classList.toggle('success');
+            //w pin.init musi sprawdzac czy chcesz dodac nowy czy tylko zamknac lub otworzyc obecny...
+            addNewPinBtn.classList.contains('success') ? draw.addEventListener('click', modules.pin.init) : false;
+        });
     },
     pin: {
         init: function(ev) {
-            if (ev.target.classList.contains('circ')) {
-                ev.target.addEventListener('click', modules.pin.commentArea(ev));
-            } else if (ev.target === draw) {
-                modules.pin.closeAllCommentArea();
-                modules.pin.addNew(ev);
+            if (addNewPinBtn.classList.contains('success')) {
+    
+                togglePinsBtn.classList.add('success');
+
+                if (ev.target.classList.contains('circ')) {
+                    ev.target.addEventListener('click', modules.pin.commentArea(ev));
+                } else if (ev.target === draw) {
+                    modules.pin.showAllPins();
+                    modules.pin.closeAllCommentArea();
+                    modules.pin.addNew(ev);
+                }
             }
         },
         addNew: function(ev) {
@@ -22,7 +45,10 @@ var modules = {
                     span.classList.add('circ');
                     span.style.left = (ev.pageX-drawX-18)+'px';
                     span.style.top = (ev.pageY-drawY-18)+'px';
-                    span.innerHTML = '<div class="commentArea"><p class="comment-list">Some lorem</p></div>';
+                    span.innerHTML = template.pin.mainComment;
+                    // span.querySelector('commentArea').innerHTML = template.pin.textarea;
+                    console.log('json', template.pin.mainComment)
+                    //
                 draw.appendChild(span)
                 //innerHTML z json'a export wateva
         },
@@ -41,8 +67,29 @@ var modules = {
                 circs[i].querySelector('.commentArea').classList.add('displayNone');
                 circs[i].classList.remove('activePin');
             }
+        },
+        closeAllPins: function() {
+            var circs = document.querySelectorAll('.circ');
+            for (var i = 0; i < circs.length; i++) {
+                circs[i].classList.add('displayNone');
+            }
+        },
+        showAllPins: function() {
+            var circs = document.querySelectorAll('.circ');
+            for (var i = 0; i < circs.length; i++) {
+                circs[i].classList.remove('displayNone');
+            }
         }
-   } 
+   },
+   uuid: function() {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[x]/g, function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+   }
 };
                     //wyswietla komentarz
                     //mozliwosc edycji

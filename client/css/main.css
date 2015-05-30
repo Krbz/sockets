@@ -1,20 +1,51 @@
 .displayNone {
 	display: none;
 }
-
-
+nav {
+	width: 100%;
+	height: 50px;
+	background: #fda;
+}
 body {
     padding: 0;
-    margin: 0;
+    text-align: center;
+    margin: 0 auto;
     background: #ccc;
 }
+#sidebar {
+	background: #fff;
+	border: 1px solid #eee;
+	width: 35px;
+	height: 80vh;
+	margin: 20px auto;
+	display: inline-block;
+	vertical-align: top;
+}
+.fa-1-5x {
+	font-size: 1.5em !important;
+}
+#sidebar .button {
+	color: #c0392b;
+	/*background: ;*/
+	padding: 2px 0px;
+	margin: 5px 0px 5px 0px;
+	cursor: pointer;
+}
+#sidebar .success {
+	color: #27ae60;
+}
+/**/
 #draw {
     background: #fff;
     border: 1px solid #eee;
     height: 80vh;
-    width: 80%;
+   	background-position: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 90%;
     margin: 20px auto;
     position: relative;
+	display: inline-block;
 }
 
 @keyframes pinAnimation {
@@ -47,13 +78,10 @@ body {
 }
 .circ:hover {
 	animation: 3s pinAnimation infinite;
-	/*transition: background 1s infinite;*/
-	/*background: #fda;*/
-	/*animation: 2s backgroundChange infinite;*/
 }
 
 .commentArea {
-	border: 1px solid #333;
+	border: 1px solid #ccc;
 	background: #fff;
 	margin-top: -5px;
 	margin-left: 25px;
@@ -61,17 +89,47 @@ body {
 	text-align: left;
 	border-radius: 5px 5px 5px 5px;
 	cursor: default;
+	color: #333;
+	position: relative;
 }
-.commentArea .comment-list {
+.commentArea .comment-main {
 	width: 90%;
 	min-height: 0;
 	color: #000;
 	padding: 5px 10px;
 	cursor: auto;
 }
-.commentArea .comment-list p.comment-text {
-	font-size: 1.1em;
+.commentArea .comment-feedback p {
+	font-size: 0.8em;
+	padding: 5px 5px 5px 15px;
+	border-bottom: 1px solid #ccc;
+  	margin: 10px 2px 10px 2px;
+  	color: #333;
 }
+.commentArea .comment-feedback p:first-child {
+	border-top: 1px solid #ccc;
+}
+.close-commentArea::before {
+	content: 'x';
+	color: #b00b00;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+}
+.commentArea textarea {
+	width: 95%;
+  	border: none;
+  	background: none;
+  	padding: 5px 5px 5px 5px;
+  	overflow: hidden;
+  	resize: none;
+}
+.commentArea textarea:focus {
+	border: none;
+	outline: none;
+}
+
 
 .activePin {
 	z-index: 999;

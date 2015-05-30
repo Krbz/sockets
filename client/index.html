@@ -3,14 +3,50 @@
   <head>
     <title>Socket.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
-    
-    <div id="draw"></div>
+
+    <div id="sidebar">
+      <div id="voteProjectBtn" class="button" data-alt="Oceń projekt">
+        <i class="fa fa-star-o fa-1-5x"></i>
+      </div>
+      <div id="addNewPinBtn" class="button success" data-alt="Dodaj nowy pin">
+        <i class="fa fa-pencil fa-1-5x"></i>
+      </div>
+      <div id="resizeProjectBtn" class="button" data-alt="Zmień wymiary wyswietlenia">
+        <i class="fa fa-expand fa-1-5x"></i>
+      </div>
+      <div id="togglePinsBtn" class="button" data-alt="Pokaż/ukryj pin'y">
+        <i class="fa fa-map-marker fa-1-5x"></i>
+      </div>
+      <div id="copyUrlBtn" class="button" data-alt="Skopiuj adres do schowka">
+        <i class="fa fa-paperclip fa-1-5x"></i>
+      </div>
+    </div>
+    <div id="draw">
+
+      <!---->
+      <span class="circ displayNone" style="left: 320px; top: 32px;">
+        <div class="commentArea displayNone">
+          <div class="comment-main">
+            <p>Demokracja polega na tym, że jeżeli ja z panem i panią będziemy na bezludnej wyspie, to większością głosów ustalimy, że pani ma z nami na zmianę sypiać!</p>
+          </div>
+          <div class="comment-feedback">
+            <p>Demokracja polega na tym, że jeżeli ja z panem i panią będziemy na bezludnej wyspie, to większością głosów ustalimy, że pani ma z nami na zmianę sypiać!</p>
+            <p>Korwin Ipsum rulez</p>
+          </div>
+          <textarea placeholder="Write a comment.."></textarea>
+          <span class="close-commentArea"></span>
+        </div>
+      </span>
+      
+    </div>
 
 
     <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/template.json"></script>
     <script src="/js/main.js"></script>
 
   </body>

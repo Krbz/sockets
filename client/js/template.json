@@ -1,0 +1,15 @@
+var template = {
+    pin: {
+        mainComment: '<div class="commentArea"><textarea placeholder="Write a comment.."></textarea></div>',
+        textarea: '<textarea placeholder="Write a comment.."></textarea>',
+        text: '<p class="comment-list"></p>'
+    },
+    pics: function() {
+        return [
+                'https://m1.behance.net/rendition/pm/25825747/max_1200/4078866363d4914099533c0124ec60f9.jpg',
+                'https://m1.behance.net/rendition/pm/26562881/hd/bbccf19291e1b944f6e3830b8c50679f.jpg',
+                'https://m1.behance.net/rendition/pm/25378737/hd/e20793c3cd051a7fdd3d645e282045c0.jpg',
+                'https://m1.behance.net/rendition/pm/25378737/hd/4a7c41f29d24990c24615f74333e4111.jpg',
+                'https://m1.behance.net/rendition/pm/26216003/1400/135cdd43996620c8984ad6a0ba493ccf.png'
+    ]}
+};
