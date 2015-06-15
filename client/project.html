@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <title>Socket.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/main.css" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css" type="text/css" />
+  </head>
+  <body>
+  
+<!--
+  foundation działa poprawnie
+    //Poczytaj dokumentacje
+    ...
+    ++grid rwd
+    ++btnony
+    ++...
+    //jquery + cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js
+    //jezeli potrzebne
+-->
+    
+    
+    
+
+    <section class="center">
+      <header>
+        <h1>Fancy project</h1><p> from <span>karbz.js</span></p>
+      </header>
+      
+      <div id="sidebar">
+        <div id="voteProjectBtn" class="buttonIcon" data-alt="Oceń projekt">
+          <div class="vote displayNone">
+            <i class="fa fa-star fa-star-o fa-1-5x"></i>
+            <i class="fa fa-star fa-star-o fa-1-5x"></i>
+            <i class="fa fa-star fa-star-o fa-1-5x"></i>
+            <i class="fa fa-star fa-star-o fa-1-5x"></i>
+            <i class="fa fa-star fa-star-o fa-1-5x"></i>
+          </div>
+          <i class="fa fa-star-o fa-1-5x"></i>
+        </div>
+        <div id="addNewPinBtn" class="buttonIcon" data-alt="Dodaj nowy pin">
+          <i class="fa fa-pencil fa-1-5x"></i>
+        </div>
+        <div id="resizeProjectBtn" class="buttonIcon" data-alt="Zmień wymiary wyswietlenia">
+          <i class="fa fa-expand fa-1-5x"></i>
+        </div>
+        <div id="togglePinsBtn" class="buttonIcon" data-alt="Pokaż/ukryj pin'y">
+          <i class="fa fa-map-marker fa-1-5x"></i>
+        </div>
+        <div id="copyUrlBtn" class="buttonIcon" data-alt="Skopiuj adres do schowka">
+          <i class="fa fa-paperclip fa-1-5x"></i>
+        </div>
+      </div>
+      
+      <div id="draw">
+        <span class="circ displayNone" style="left: 320px; top: 32px;">
+          <div class="commentArea displayNone">
+            <div class="comment-main">
+              <p>Demokracja polega na tym, że jeżeli ja z panem i panią będziemy na bezludnej wyspie, to większością głosów ustalimy, że pani ma z nami na zmianę sypiać!</p>
+            </div>
+            <div class="comment-feedback">
+              <p>Demokracja polega na tym, że jeżeli ja z panem i panią będziemy na bezludnej wyspie, to większością głosów ustalimy, że pani ma z nami na zmianę sypiać!</p>
+              <p>Korwin Ipsum rulez</p>
+            </div>
+            <textarea placeholder="Write a comment.."></textarea>
+            <span class="close-commentArea"></span>
+          </div>
+        </span>
+      </div>
+    </section>
+    
+    <section>
+    <h3>Historia</h3>
+    <div class="white">
+      <div class="clear">
+        <div id="change-20066" class="journal has-details">
+        <div id="note-1">
+        <h4>
+          <a href="#note-1" class="journal-link">#1</a>
+          Uaktualnione przez <a href="" class="user active">Javascript</a> <a href="" title="2015-05-18 16:22">14 dni</a> temu
+        </h4>
+        <ul class="details">
+           <li>Zmieniono <strong>Przypisany do</strong> z <i>Asian</i> and <i>Europa</i></li>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/template.json"></script>
+    <script src="/dist/js/main.min.js"></script>
+
+
+  </body>
+</html>
