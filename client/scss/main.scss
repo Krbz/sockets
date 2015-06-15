@@ -1,0 +1,218 @@
+$white: #fff;
+$light_gray: #ccc;
+$intesive_grey: #eee;
+$active_green: #43ac6a;
+$unactive_red: #f04124;
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body {
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    background: $light_gray;
+
+    > section {
+        text-align: center;
+        margin: 0 auto;
+        header {
+        	text-align: right;
+        	width: 90%;
+        	margin: 0 auto;
+            h1 {
+            	display: inline-block;
+            }
+            p span {
+            	font-weight: bold;
+            }
+        }
+    }
+}
+#sidebar {
+	background: $white;
+	border: 1px solid $intesive_grey;
+	width: 35px;
+	height: 80vh;
+	margin: 0 auto;
+	display: inline-block;
+	vertical-align: top;
+
+    .buttonIcon {
+    	color: $unactive_red;
+    	padding: 2px 0px;
+    	margin: 5px 0px 5px 0px;
+    	cursor: pointer;
+    	position: relative;
+    	text-align: center;
+        &:before {
+        	content: '';
+        	position: absolute;
+        	left: 40px;
+        	top: 5px;
+        	z-index: 9999;
+        	display: none;
+        	width: 0;
+        	height: 0;
+        	border-style: solid;
+        	border-width: 5px 10px 5px 0;
+        	border-color: transparent $light_gray transparent transparent;
+        }
+        &:after {
+            left: 49px;
+            width: 150px;
+            color: #333;
+            top: 1px;
+            position: absolute;
+        	background: $white;
+        	border: 1px solid $light_gray;
+        	padding: 2px 5px;
+        	content: attr(data-alt);
+        	display: none;
+        	z-index: 999;
+        }
+        
+    }
+    .buttonIcon:not(#voteProjectBtn):hover:after, #sidebar .buttonIcon:not(#voteProjectBtn):hover:before {
+    	display: block;
+    }
+    .active {
+    	color: $active_green;
+    }
+    #voteProjectBtn div.vote {
+    	left: 49px;
+    	width: 130px;
+    	top: 1px;
+    	position: absolute;
+    	z-index: 9999;
+    	background: rgba(255,255,255, 0.8);
+        i {
+        	color: $unactive_red;
+            &:hover {
+            	color: $active_green;
+            }
+        }
+    }
+}
+
+#draw {
+    background: $white;
+    border: 1px solid $intesive_grey;
+    height: 80vh;
+   	background-position: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+	display: inline-block;
+
+    .circ {
+    	position: absolute;
+    	background: #b00b00;
+        width: 36px;
+        height: 36px;
+    	border-radius: 50px;
+    	color: #fff;
+    	padding-top: 8px;
+    	font-size: 0.8em;
+    	cursor: pointer;
+    	border: 3px solid #fff;
+      	font: normal normal normal 14px/1 FontAwesome;
+    	font-size: inherit;
+        &:before {
+        	top: 7px;
+        	position: absolute;
+        	left: 8px;
+        }
+        &:hover {
+        	animation: 3s pinAnimation infinite;
+        }
+        .commentArea {
+        	border: 1px solid $light_gray;
+        	background: #fff;
+        	margin-top: -5px;
+        	margin-left: 25px;
+        	width: 200px;
+        	text-align: left;
+        	border-radius: 5px 5px 5px 5px;
+        	cursor: default;
+        	color: #333;
+        	position: relative;
+            textarea {
+            	width: 95%;
+              	border: none;
+              	background: none;
+              	padding: 5px 5px 5px 5px;
+              	overflow: hidden;
+              	resize: none;
+                &:focus {
+                	border: none;
+                	outline: none;
+                }
+            }
+            .comment-feedback p {
+        	font-size: 0.8em;
+        	padding: 5px 5px 5px 15px;
+        	border-bottom: 1px solid $light_gray;
+          	margin: 10px 2px 10px 2px;
+          	color: #333;
+            &:first-child {
+            	border-top: 1px solid $light_gray;
+            }
+        }
+        .close-commentArea {
+            &:before {
+            	content: 'x';
+            	color: #b00b00;
+            	position: absolute;
+            	right: 10px;
+            	top: 5px;
+            	cursor: pointer;
+            }
+        }
+        }
+        .commentAreaLeft {
+        	margin-left: -195px;
+        }
+        .comment-main {
+        	width: 90%;
+        	min-height: 0;
+        	color: #000;
+        	padding: 5px 10px;
+        	cursor: auto;
+        }
+
+    }
+}
+@keyframes pinAnimation {
+	0% {
+		border: 3px solid #fff;
+		background: #b00b00;
+	}
+	25% {
+		border: 3px solid #eaa292;
+	}
+	50% {
+		border: 3px solid #D64525;
+		background: #eaa292;
+	}
+	75% {
+		border: 3px solid #eaa292; 
+	}
+}
+.activePin {
+	z-index: 999;
+}
+.displayNone {
+	display: none;
+}
+.white {
+	background: #fff;
+}
+.fa-1-5x {
+	font-size: 1.5em !important;
+}

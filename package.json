@@ -1,0 +1,38 @@
+{
+  "name": "justSockets",
+  "version": "0.0.1",
+  "description": "Creating a new version for symu.co",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "notYet"
+  },
+  "author": "krbz",
+  "dependencies": {
+    "gulp": "latest",
+    "express": "latest",
+    "mongoose": "latest",
+    "mongodb": "latest",
+    "socket.io": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-sass": "^2.0.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-util": "^3.0.5",
+    "jshint-stylish": "^2.0.0"
+  },
+  "keywords": [
+    "symu",
+    "node",
+    "js",
+    "gulp",
+    "sass"
+  ],
+  "license": "Do what u want"
+}
