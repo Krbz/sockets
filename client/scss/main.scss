@@ -1,8 +1,8 @@
 $white: #fff;
 $light_gray: #ccc;
 $intesive_grey: #eee;
-$active_green: #43ac6a;
-$unactive_red: #f04124;
+$success: #43ac6a;
+$alert: #f04124;
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -42,7 +42,7 @@ body {
 	vertical-align: top;
 
     .buttonIcon {
-    	color: $unactive_red;
+    	color: $alert;
     	padding: 2px 0px;
     	margin: 5px 0px 5px 0px;
     	cursor: pointer;
@@ -80,7 +80,7 @@ body {
     	display: block;
     }
     .active {
-    	color: $active_green;
+    	color: $success;
     }
     #voteProjectBtn div.vote {
     	left: 49px;
@@ -90,9 +90,9 @@ body {
     	z-index: 9999;
     	background: rgba(255,255,255, 0.8);
         i {
-        	color: $unactive_red;
+        	color: $alert;
             &:hover {
-            	color: $active_green;
+            	color: $success;
             }
         }
     }

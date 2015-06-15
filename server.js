@@ -10,7 +10,6 @@ var MongoClient = mongodb.MongoClient;
 var url = 'mongodb://karbz:shinev234@ds031842.mongolab.com:31842/nodedb';
 
 
-
 app.use(express.static(path.resolve(__dirname, 'client')));
 
 io.on('connection', function (socket) {
