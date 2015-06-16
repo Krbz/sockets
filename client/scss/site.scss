@@ -1,8 +1,14 @@
+@mixin transform($degree) {
+  -webkit-transform: skew($degree);
+     -moz-transform: skew($degree);
+      -ms-transform: skew($degree);
+          transform: skew($degree);
+}
 header {
     background: url(http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2014/09/work-desk-computer-laptop.jpg);
-    margin: 1% 0 5% 0;
+    margin: 69px 0 5% 0;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: 100% 800px;
     background-position: 100% -150px;
     .row {
         background: rgba(0,0,0,0.1);
@@ -13,10 +19,84 @@ header {
         color: #fff;
     }
 }
-
 .section {
   padding: 5% 0;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   margin: 1% auto;
+    &:first-child {
+        border-bottom: none;
+    }
+}
+.nav {
+    background: rgba(0,0,0,0.6);
+    padding: 10px 0;
+    ul {
+        li {
+            position: relative;
+            list-style: none;
+            font-size: 1em;
+            &:hover {
+                @include transform(-18deg);
+                // background:red;
+                background: rgba(0,0,0,.1);
+                a {
+                    @include transform(18deg);
+                }
+                &:before {
+                    @include transform(18deg);
+                }
+            }
+            &:before {
+                color: #fff;
+                content: "/";
+                top: -3px;
+                position: absolute; 
+                left: -10px;
+                font-size: 1.5em;
+            }
+            &:first-child:before {
+                content: " ";
+                margin: 0;
+            }
+            a {
+                color: #fff;
+                &:hover {
+                    color: #fff;
+
+                }
+            }
+        }
+    }
+    h1 {
+        font-size: 1rem;
+        img {
+            width: 50%;
+        }
+    }
+}
+
+.ldark_bg {
+      background: rgba(0,0,0,.2);
+}
+.small-padding {
+    padding: 2% 0;
+    li {
+        padding: 0 0;
+    }
+}
+.small-margin {
+    margin: 2% 0 0 0;
+}
+ul[class*="block-grid-"] {
+    padding: 20px 20px;
+}
+ul[class*="block-grid-"]>li {
+    padding: 0 0;
+}
+
+@media only screen and (max-width: 40em) { 
+    header {
+        margin-top:0;
+    }
 }
